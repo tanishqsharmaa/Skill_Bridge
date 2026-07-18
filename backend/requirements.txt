@@ -1,0 +1,42 @@
+# SkillBridge Backend — Python Dependencies
+# Install inside the "virt" virtual environment:
+#   python -m venv virt
+#   virt\Scripts\activate          (Windows)
+#   pip install -r requirements.txt
+
+# ── Web framework ─────────────────────────────────────────────
+fastapi>=0.115
+uvicorn[standard]>=0.30
+httpx>=0.27
+
+# ── Data validation ───────────────────────────────────────────
+pydantic>=2.7
+pydantic-settings>=2.3
+
+# ── LangChain / LangGraph ─────────────────────────────────────
+langchain>=0.3
+langchain-deepseek>=0.1
+langgraph>=0.2
+
+# ── Database ──────────────────────────────────────────────────
+supabase>=2.5
+
+# ── AI / Embeddings ───────────────────────────────────────────
+google-genai>=1.0
+
+# ── Email ─────────────────────────────────────────────────────
+resend>=2.0
+
+# ── Resilience ────────────────────────────────────────────────
+tenacity>=8.3
+
+# ── Deployment ────────────────────────────────────────────────
+modal>=0.64
+
+# ── Config ────────────────────────────────────────────────────
+python-dotenv>=1.0
+
+# ── Dev / Testing ─────────────────────────────────────────────
+pytest>=8.0
+pytest-asyncio>=0.23
+pytest-mock>=3.14

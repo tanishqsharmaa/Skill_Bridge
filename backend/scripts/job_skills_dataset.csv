@@ -1,0 +1,123 @@
+role,skill,importance_level
+Backend Developer,Python,5
+Backend Developer,FastAPI,4
+Backend Developer,PostgreSQL,4
+Backend Developer,REST APIs,5
+Backend Developer,Docker,4
+Backend Developer,Git,5
+Backend Developer,SQL,4
+Backend Developer,Redis,3
+Backend Developer,Unit Testing,4
+Backend Developer,Authentication & Authorization,4
+Backend Developer,HTTP & Web Protocols,4
+Backend Developer,Async Programming,3
+Backend Developer,Linux CLI,3
+Backend Developer,System Design Basics,3
+Backend Developer,CI/CD Pipelines,3
+Frontend Developer,JavaScript,5
+Frontend Developer,React,5
+Frontend Developer,HTML5,5
+Frontend Developer,CSS3,5
+Frontend Developer,TypeScript,4
+Frontend Developer,Git,5
+Frontend Developer,REST API Integration,4
+Frontend Developer,Responsive Design,4
+Frontend Developer,Webpack / Vite,3
+Frontend Developer,Accessibility (ARIA),3
+Frontend Developer,State Management (Redux/Zustand),3
+Frontend Developer,Unit Testing (Jest),3
+Frontend Developer,Browser DevTools,4
+Frontend Developer,Performance Optimization,3
+Frontend Developer,SEO Basics,2
+Data Analyst,SQL,5
+Data Analyst,Python,4
+Data Analyst,Excel / Google Sheets,4
+Data Analyst,Data Visualization,4
+Data Analyst,Statistics,4
+Data Analyst,Pandas,4
+Data Analyst,Data Cleaning,5
+Data Analyst,Business Communication,4
+Data Analyst,Tableau / Power BI,3
+Data Analyst,A/B Testing,3
+Data Analyst,Git,3
+Data Analyst,Probability,3
+ML Engineer,Python,5
+ML Engineer,PyTorch,4
+ML Engineer,scikit-learn,4
+ML Engineer,Feature Engineering,5
+ML Engineer,Model Evaluation & Metrics,5
+ML Engineer,Linear Algebra & Calculus,4
+ML Engineer,Statistics & Probability,4
+ML Engineer,Data Preprocessing,5
+ML Engineer,Git,4
+ML Engineer,SQL,3
+ML Engineer,MLflow / Experiment Tracking,3
+ML Engineer,Model Deployment (APIs),3
+ML Engineer,Pandas & NumPy,5
+ML Engineer,Deep Learning Fundamentals,4
+ML Engineer,Hyperparameter Tuning,3
+DevOps Engineer,Docker,5
+DevOps Engineer,Kubernetes,4
+DevOps Engineer,CI/CD (GitHub Actions / Jenkins),5
+DevOps Engineer,Linux System Administration,5
+DevOps Engineer,Terraform / IaC,4
+DevOps Engineer,Monitoring (Prometheus / Grafana),4
+DevOps Engineer,Git,5
+DevOps Engineer,Networking Fundamentals,4
+DevOps Engineer,Cloud Platforms (AWS/GCP/Azure),4
+DevOps Engineer,Shell Scripting,4
+DevOps Engineer,Security Best Practices,3
+DevOps Engineer,Incident Management,3
+Full Stack Developer,JavaScript,5
+Full Stack Developer,React,4
+Full Stack Developer,Node.js,4
+Full Stack Developer,Python,3
+Full Stack Developer,PostgreSQL,4
+Full Stack Developer,REST APIs,5
+Full Stack Developer,Docker,3
+Full Stack Developer,Git,5
+Full Stack Developer,TypeScript,4
+Full Stack Developer,CSS3,4
+Full Stack Developer,Authentication (JWT/OAuth),4
+Full Stack Developer,Testing (Frontend + Backend),3
+UI/UX Designer,Figma,5
+UI/UX Designer,User Research,5
+UI/UX Designer,Wireframing,5
+UI/UX Designer,Prototyping,4
+UI/UX Designer,Accessibility Standards,4
+UI/UX Designer,Typography & Color Theory,4
+UI/UX Designer,Usability Testing,4
+UI/UX Designer,Information Architecture,3
+UI/UX Designer,Design Systems,3
+UI/UX Designer,Basic HTML/CSS,2
+Cloud Engineer,AWS Core Services (EC2/S3/RDS/IAM),5
+Cloud Engineer,Terraform / CloudFormation,5
+Cloud Engineer,Networking (VPC/Subnets/DNS),4
+Cloud Engineer,Kubernetes,4
+Cloud Engineer,Docker,4
+Cloud Engineer,IAM & Security,5
+Cloud Engineer,Monitoring & Logging,4
+Cloud Engineer,CI/CD,4
+Cloud Engineer,Cost Optimization,3
+Cloud Engineer,Git,4
+Cloud Engineer,Shell Scripting,3
+QA Engineer,Manual Testing,5
+QA Engineer,Selenium / Playwright,4
+QA Engineer,Pytest / JUnit,4
+QA Engineer,API Testing (Postman),4
+QA Engineer,Bug Reporting,5
+QA Engineer,Regression Testing,5
+QA Engineer,CI Integration,3
+QA Engineer,Test Case Design,5
+QA Engineer,Git,3
+QA Engineer,Performance Testing,3
+Product Manager,Product Roadmapping,5
+Product Manager,Jira / Linear,4
+Product Manager,SQL (basic queries),3
+Product Manager,Stakeholder Communication,5
+Product Manager,Analytics (Mixpanel / Amplitude),4
+Product Manager,A/B Testing,4
+Product Manager,Prioritization Frameworks (RICE/MoSCoW),4
+Product Manager,User Story Writing,5
+Product Manager,Competitive Analysis,4
+Product Manager,Agile / Scrum,4
