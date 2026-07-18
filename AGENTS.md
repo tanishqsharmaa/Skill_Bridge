@@ -172,38 +172,61 @@ F:\IBM internship\sunmission\Project\Build\backend\virt\
 
 ---
 
-## 8. Git Commit & Push After Every Interaction
+## 8. Git Commit & Push — Frequent Checkpoints
 
-**At the end of every interaction where any file was created or modified, always hand off a git commit + push.**
+**Commit and push at every meaningful checkpoint within an interaction — not just at the end.**
 
-### When to trigger
-- Any time one or more files were written, edited, or deleted during the interaction.
-- Always at the end of the response — never skip it, even for small changes.
+### Repository location
+The git repository root is `Build/` — **not** the project root.
+Remote: `https://github.com/tanishqsharmaa/Skill_Bridge`
+
+All `git` commands must be run from:
+```
+F:\IBM_internship\sunmission\Project\Build\
+```
+
+### When to trigger (in order within a session)
+
+| Checkpoint | When | Commit type |
+|---|---|---|
+| **1. After writing code** | Immediately after all source files for a task are created/modified — before handing off any test command | `feat` or `chore` |
+| **2. After each debug fix** | Every time a bug is identified and fixed (even a one-line fix) — before asking the user to re-run tests | `fix` |
+| **3. After sprint close** | Once all exit gate tests pass and documentation is updated | `feat(sprintN)` |
+
+**Rule:** Never batch multiple debug cycles into one commit. Each fix → its own commit → its own push.
 
 ### Commit message format
 ```
 <type>(<scope>): <short summary>
-
-<optional bullet list of what changed>
 ```
 
 Types: `feat` · `fix` · `docs` · `chore` · `test`  
-Scope: sprint number or module (e.g. `sprint1`, `config`, `schema`, `agents`)
+Scope: sprint number or module (e.g. `sprint2`, `nodes`, `retrieval`, `schema`)
 
-### How to hand off
-Always end the response with this block:
-
+**Examples:**
 ```
-📋 Commit & push — run from the project root:
+feat(sprint2): add Agent 1 skill gap nodes and graph
+fix(sprint2): correct column name readiness_percent → overall_readiness_percent
+fix(sprint2): fix prompt path — 3 parents not 4 from nodes.py
+test(sprint2): add unit tests for retrieval layer
+```
 
-    git add .
-    git commit -m "type(scope): summary"
-    git push
+### How to execute
+The agent runs git commands directly using run_command — **never hand off to the user.**
 
+Always run from `Build/`:
+```
+cd "F:\IBM_internship\sunmission\Project\Build"
+git add .
+git commit -m "type(scope): summary"
+git push
 ```
 
 ### Agent working rules
-- Write the commit message — don't make the user think of one.
-- Always use `git add .` from the repo root so nothing is missed.
+- Write the commit message and run it — don't ask the user or hand it off.
+- Always `cd` into `Build/` before any git command — never run git from the project root.
+- Always use `git add .` so nothing is missed.
 - `git push` is always included — a local-only commit is not enough.
-- If the interaction had no file changes (e.g. pure Q&A), skip this rule silently.
+- Run the commit **before** asking the user to run tests, so the test baseline is always committed.
+- Run a new commit **after every fix**, before asking the user to re-run the failing tests.
+- If the interaction had no file changes (e.g. pure Q&A), skip silently.

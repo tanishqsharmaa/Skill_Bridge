@@ -72,3 +72,46 @@ Added retry loop in `embed_text()`: on `429`, parses `retry in Xs` from the erro
 
 **Verification:**
 121 rows already in DB — sufficient. No re-seed needed unless row 122 is specifically required.
+
+---
+
+## Entry 004 — 2026-07-17
+
+**Where:** `src/retrieval/embeddings.py` — Sprint 2, Task 2
+
+**Error:**
+```
+Wrong SDK — embeddings.py used legacy google-generativeai while seeding script
+used google-genai. Different response shapes + no output_dimensionality control.
+```
+
+**Root cause:**
+`embeddings.py` was written with `import google.generativeai as genai` (old SDK). The seeding script uses `from google import genai` (new SDK). Old SDK uses `result["embedding"]`; new SDK uses `result.embeddings[0].values`. Also, without `output_dimensionality=768`, old SDK returns 3072-dim vectors — mismatch against `vector(768)` column.
+
+**Fix applied:**
+Rewrote `embeddings.py` to use `google-genai` SDK with `EmbedContentConfig(task_type="RETRIEVAL_QUERY", output_dimensionality=768)`. Updated unit test mocks to match new response shape.
+
+**Verification:**
+`SELECT vector_dims(embedding) FROM job_skills LIMIT 1` → 768 ✅. Unit tests 13/13 ✅.
+
+---
+
+## Entry 005 — 2026-07-17
+
+**Where:** `src/agents/skill_gap/nodes.py` — Sprint 2, safety_net DB insert
+
+**Error:**
+```
+postgrest.exceptions.APIError: {'message': "Could not find the 'readiness_percent'
+column of 'skill_gaps' in the schema cache", 'code': 'PGRST204'}
+```
+
+**Root cause:**
+`safety_net` insert used keys `skill_gap_data` and `readiness_percent`, but `schema.sql` defines columns as `skill_gap_report` (JSONB) and `overall_readiness_percent` (INT). Two mismatches.
+
+**Fix applied:**
+- `nodes.py`: changed `skill_gap_data` → `skill_gap_report`, `readiness_percent` → `overall_readiness_percent`.
+- `test_skill_gap_e2e.py` assertion: `rows[0]["readiness_percent"]` → `rows[0]["overall_readiness_percent"]`.
+
+**Verification:**
+Re-run integration tests.

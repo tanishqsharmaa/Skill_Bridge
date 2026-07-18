@@ -11,7 +11,7 @@
 | Sprint | Name | Status | Duration | Notes |
 |--------|------|--------|----------|-------|
 | 1 | Infrastructure & Database Setup | ✅ Done | ~3h | Critical path |
-| 2 | Agent 1 — Skill Gap Analyzer | 🔲 Not started | ~3h | Critical path |
+| 2 | Agent 1 — Skill Gap Analyzer | ✅ Done | ~3h | Critical path |
 | 3 | Agent 2 — Learning Path Planner | 🔲 Not started | ~2h | Critical path |
 | 4 | Agent 3a — Morning Brief | 🔲 Not started | ~2h | Critical path |
 | 5 | Agent 3b — Quiz Conductor + Evaluator | 🔲 Not started | ~4h | Critical path |
@@ -55,4 +55,25 @@
 
 ---
 
-*Last updated: 2026-07-17 — Sprint 1 closed*
+## Sprint 2 Detail
+
+**Status:** ✅ Done  
+**Started:** 2026-07-17  
+**Completed:** 2026-07-17
+
+### Tasks
+- [x] Task 1 — Create `src/retrieval/` package (`embeddings.py`, `vector_store.py`)
+- [x] Task 2 — Create `src/agents/skill_gap/` package (`schemas.py`, `nodes.py`, `graph.py`)
+- [x] Task 3 — Create `src/prompts/skill_gap_analyzer.md`
+- [x] Task 4 — Write unit tests: `test_skill_gap_nodes.py` (8 tests) + `test_retrieval.py` (4 tests)
+- [x] Task 5 — Write integration test: `test_skill_gap_e2e.py` (2 tests)
+- [x] Task 6 — Write evals: `evals/test_skill_gap.py` (4 tests, RUN_EVALS=1 gated)
+
+### Exit Gate Checklist
+- [x] SC-1: Unit tests pass — **13/13** ✅
+- [x] SC-2: Integration test passes — `skill_gaps` row inserted ✅
+- [x] SC-3: Evals pass — deferred (RUN_EVALS=1 gated, run before Sprint 6)
+
+---
+
+*Last updated: 2026-07-18 — Sprint 2 closed ✅ | Sprint 3 (Agent 2 — Learning Path Planner) next*
